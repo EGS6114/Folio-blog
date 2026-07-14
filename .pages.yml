@@ -1,0 +1,65 @@
+# PagesCMS 配置文件
+# 适配 Astro 博客项目
+
+# 媒体文件配置（命名数组格式）
+media:
+  - name: uploads
+    label: 上传图片
+    input: public/uploads
+    output: /uploads
+    categories: [image]
+
+# 内容配置
+content:
+  # 博客文章集合
+  - name: blog
+    label: 博客文章
+    type: collection
+    path: src/content/blog
+    format: yaml-frontmatter
+    filename: "{fields.title}.md"
+    
+    # 列表视图显示的字段
+    view:
+      fields: [title, pubDate, tags, draft]
+    
+    # 字段定义
+    fields:
+      - name: title
+        label: 文章标题
+        type: text
+        required: true
+
+      - name: description
+        label: 文章摘要
+        type: textarea
+        required: true
+
+      - name: pubDate
+        label: 发布日期
+        type: datetime
+        required: true
+        options:
+          format: yyyy-MM-dd
+
+      - name: coverImage
+        label: 封面图片地址
+        type: text
+        required: false
+
+      - name: tags
+        label: 标签
+        type: tags
+
+      - name: draft
+        label: 设为草稿
+        type: boolean
+        default: false
+
+      - name: body
+        label: 正文内容
+        type: rich-text
+        required: true
+
+# 提交消息模板
+commitTemplate: "[PagesCMS] 更新文章 {{entry.path}}"
