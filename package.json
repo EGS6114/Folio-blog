@@ -1,0 +1,21 @@
+{
+  "name": "okmij-blog",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "一个极简、快速的个人博客，基于 Astro 构建",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.0.0",
+    "@astrojs/rss": "^4.0.0",
+    "@astrojs/sitemap": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}

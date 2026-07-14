@@ -1,0 +1,58 @@
+---
+// 博客文章详情页布局
+// 用于渲染单篇文章的完整内容
+
+// 导入基础布局
+import BaseLayout from "./BaseLayout.astro";
+
+// 定义组件接收的参数
+interface Props {
+  // 文章标题
+  title: string;
+  // 文章描述
+  description: string;
+  // 发布日期
+  pubDate: Date;
+  // 封面图片（可选）
+  coverImage?: string;
+}
+
+// 接收参数
+const { title, description, pubDate, coverImage } = Astro.props;
+
+// 格式化日期
+const formattedDate = pubDate.toLocaleDateString("zh-CN", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<BaseLayout title={`${title} - 我的博客`} description={description}>
+  <article>
+    <!-- 文章头部：标题 + 日期，居中显示 -->
+    <header class="post-header">
+      <h1 class="post-title">{title}</h1>
+      <time class="post-date" datetime={pubDate.toISOString()}>
+        {formattedDate}
+      </time>
+    </header>
+
+    <!-- 封面图片（如果有） -->
+    {
+      coverImage && (
+        <img
+          src={coverImage as string}
+          alt={title}
+          class="post-cover"
+          loading="eager"
+        />
+      )
+    }
+
+    <!-- 文章正文内容，通过插槽传入 -->
+    <div class="post-content">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

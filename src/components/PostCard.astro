@@ -1,0 +1,58 @@
+---
+// 文章卡片组件
+// 用于首页文章列表，显示封面、标题、日期和摘要
+// 每篇文章独占一行，不做分类展示
+
+// 定义组件接收的参数
+interface Props {
+  // 文章标题
+  title: string;
+  // 文章链接（slug）
+  slug: string;
+  // 发布日期
+  pubDate: Date;
+  // 文章描述/摘要
+  description: string;
+  // 封面图片 URL（可选）
+  coverImage?: string;
+}
+
+// 接收父组件传入的参数
+const { title, slug, pubDate, description, coverImage } = Astro.props;
+
+// 格式化日期为中文格式
+const formattedDate = pubDate.toLocaleDateString("zh-CN", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<article class="post-card">
+  <!-- 封面图片（如果有） -->
+  {
+    coverImage && (
+      <a href={`/blog/${slug}/`}>
+        <img
+          src={coverImage as string}
+          alt={title}
+          class="post-card-cover"
+          loading="lazy"
+        />
+      </a>
+    )
+  }
+
+  <!-- 文章标题，独占一行 -->
+  <h2 class="post-card-title">
+    <a href={`/blog/${slug}/`}>{title}</a>
+  </h2>
+
+  <!-- 发布日期 -->
+  <time class="post-card-date" datetime={pubDate.toISOString()}>
+    {formattedDate}
+  </time>
+
+  <!-- 文章摘要/大概内容 -->
+  <p class="post-card-description">{description}</p>
+</article>

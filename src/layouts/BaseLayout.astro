@@ -1,0 +1,64 @@
+---
+// 基础布局组件
+// 所有页面都使用这个布局，包含头部、页脚和全局样式
+
+// 导入全局样式
+import "~/styles/global.css";
+
+// 导入组件
+import Header from "~/components/Header.astro";
+import Footer from "~/components/Footer.astro";
+
+// 定义组件接收的参数
+interface Props {
+  // 页面标题
+  title?: string;
+  // 页面描述（用于 SEO）
+  description?: string;
+}
+
+// 接收参数，设置默认值
+const { title = "我的博客", description = "记录学习、生活与思考" } =
+  Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+
+    <!-- 页面标题 -->
+    <title>{title}</title>
+
+    <!-- RSS 订阅发现，让浏览器能自动发现 RSS -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS 订阅"
+      href="/rss.xml"
+    />
+
+    <!-- 网站图标（可选，可自行替换） -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- 网站头部 -->
+    <Header />
+
+    <!-- 主内容区域，插槽放置页面内容 -->
+    <main class="main-content">
+      <div class="container">
+        <slot />
+      </div>
+    </main>
+
+    <!-- 网站页脚 -->
+    <Footer />
+  </body>
+</html>
