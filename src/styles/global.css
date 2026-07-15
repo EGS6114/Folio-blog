@@ -118,7 +118,7 @@ a:hover {
 }
 
 .site-title {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: var(--spacing-xs);
 }
@@ -142,11 +142,11 @@ a:hover {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-sm);
 }
 
 .post-card {
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-xs) 0;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -173,7 +173,7 @@ a:hover {
 .post-card-date {
   font-size: 0.875rem;
   color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
 }
 
 .post-card-cover {
@@ -328,7 +328,7 @@ a:hover {
     --spacing-xl: 2rem;
   }
 
-  .site-title { font-size: 1.5rem; }
+  .site-title { font-size: 2.2rem; }
   .post-title { font-size: 1.6rem; }
   .post-card-title { font-size: 1.2rem; }
   .post-card-cover { height: 160px; }
