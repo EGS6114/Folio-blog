@@ -1,5 +1,5 @@
 {
-  "name": "okmij-blog",
+  "name": "Folio-blog",
   "type": "module",
   "version": "1.0.0",
   "description": "一个极简、快速的个人博客，基于 Astro 构建",

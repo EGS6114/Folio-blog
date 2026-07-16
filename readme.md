@@ -1,9 +1,9 @@
-# okmij-blog快速部署
+# Folio-blog快速部署
 
 
 ## 概述
  
- okmij-blog 是基于 Astro 框架构建的轻量化静态个人博客项目。支持部署在Cloudflare Pages、Vercel、GitHub Pages 等主流静态托管平台。可以接入pagescms快速推送文章
+ Folio-blog 是基于 Astro 框架构建的轻量化静态个人博客项目。支持部署在Cloudflare Pages、Vercel、GitHub Pages 等主流静态托管平台。可以接入pagescms快速推送文章
 
 ## 1.环境准备
  
@@ -14,9 +14,9 @@
 ## 2.拉取仓库
 
 打开终端，依次执行指令
-`git clone https://github.com/EGS6114/okmij-blog.git`
+`git clone https://github.com/EGS6114/Folio-blog.git`
 
-`cd okmij-blog`
+`cd Folio-blog`
 
 `npm install`
 
@@ -27,18 +27,13 @@
 打包静态资源：`npm run build`
 编译完成后，静态文件输出至项目内*dist*文件夹。
 
-## 3.修改配置文件
-
-##### 站点基础配置
-配置文件路径 `src/config.ts`
-
-## 4.补充部署参考
+## 3.补充部署参考
 
 **Cloudflare Pages / Vercel**
 构建命令： `npm run build`
 输出目录：`dist`
 
-## 5.题外话
+## 4.题外话
 
 我之前也折腾过各种各样的博客框架，各种各样的主题，但是在研究透功能之后也就感觉累了，没意思了。感觉我的乐趣更多是在修bug，优化功能上，可惜我始终没能沉下心来写文章。
 

@@ -17,7 +17,7 @@ export async function GET(context) {
 
   return rss({
     // 博客标题
-    title: '我的博客',
+    title: 'Folio-blog',
 
     // 博客描述
     description: '记录学习、生活与思考',
