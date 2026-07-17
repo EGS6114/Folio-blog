@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   // 网站地址，用于生成 sitemap 和 RSS
-  site: 'https://your-blog-domain.com',
+  site: 'https://folio.cc.cd',
 
   // 集成插件
   integrations: [
