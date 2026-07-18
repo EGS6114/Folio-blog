@@ -8,8 +8,9 @@ main = "./dist/_worker.js"
 # ============================================
 # 静态资源配置（仅包含目录和可选选项）
 # ============================================
-[assets]
-directory = "./dist"
-# 如果不需要特殊处理，可以不写 html_handling，Wrangler 会使用默认行为
-# 若确实需要，务必用合法值：
-# html_handling = "auto-trailing-slash"
+route = "blog.folio.cc.cd/*"
+
+# 如果你以后想加多个路由，改用下面的数组形式：
+# [[routes]]
+# pattern = "blog.folio.cc.cd/*"
+# zone_name = "folio.cc.cd"
