@@ -8,6 +8,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   // 网站地址，用于生成 sitemap 和 RSS
   site: 'https://folio.cc.cd',
+  adapter: cloudflare(),
 
   // 集成插件
   integrations: [

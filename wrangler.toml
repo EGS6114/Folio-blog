@@ -1,0 +1,16 @@
+# ============================================
+# 基础配置
+# ============================================
+name = "folio-blog"                    # Worker 名称（必填）
+compatibility_date = "2026-07-18"      # 兼容日期（必填）
+main = "./dist/_worker.js"             # Astro 构建后的入口文件
+
+# ============================================
+# 静态资源配置（可选）
+# ============================================
+[assets]
+directory = "./dist"                   # 静态资源目录
+not_found_handling = "single-page-application"  # SPA 模式（可选）
+html_handling = "auto"              # HTML 尾部斜杠处理（可选）
+
+route = "blog.folio.cc.cd/*"
