@@ -9,7 +9,9 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   // 网站地址，用于生成 sitemap 和 RSS
   site: 'https://folio.cc.cd',
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    enableSessions: false,  // 禁用会话 KV
+  }),
 
   // 集成插件
   integrations: [
