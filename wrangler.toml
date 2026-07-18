@@ -1,16 +1,26 @@
 # ============================================
 # 基础配置
 # ============================================
-name = "folio-blog"                    # Worker 名称（必填）
-compatibility_date = "2026-07-18"      # 兼容日期（必填）
-main = "./dist/_worker.js"             # Astro 构建后的入口文件
+name = "folio-blog"
+compatibility_date = "2026-07-18"
+main = "./dist/_worker.js"
 
 # ============================================
-# 静态资源配置（可选）
+# 静态资源配置（仅包含目录和可选选项）
 # ============================================
 [assets]
-directory = "./dist"                   # 静态资源目录
-not_found_handling = "single-page-application"  # SPA 模式（可选）
-html_handling = "auto"              # HTML 尾部斜杠处理（可选）
+directory = "./dist"
+# 如果不需要特殊处理，可以不写 html_handling，Wrangler 会使用默认行为
+# 若确实需要，务必用合法值：
+# html_handling = "auto-trailing-slash"
 
+# ============================================
+# 路由配置（放在顶级，不要放在 assets 内）
+# ============================================
+# 单一路由写法
 route = "blog.folio.cc.cd/*"
+
+# 如果你以后想加多个路由，改用下面的数组形式：
+# [[routes]]
+# pattern = "blog.folio.cc.cd/*"
+# zone_name = "folio.cc.cd"
