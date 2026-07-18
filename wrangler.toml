@@ -13,14 +13,3 @@ directory = "./dist"
 # 如果不需要特殊处理，可以不写 html_handling，Wrangler 会使用默认行为
 # 若确实需要，务必用合法值：
 # html_handling = "auto-trailing-slash"
-
-# ============================================
-# 路由配置（放在顶级，不要放在 assets 内）
-# ============================================
-# 单一路由写法
-route = "blog.folio.cc.cd/*"
-
-# 如果你以后想加多个路由，改用下面的数组形式：
-# [[routes]]
-# pattern = "blog.folio.cc.cd/*"
-# zone_name = "folio.cc.cd"
