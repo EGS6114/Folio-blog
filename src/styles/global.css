@@ -362,3 +362,36 @@ a:hover {
   white-space: nowrap;
   border: 0;
 }
+/* ---------- 表格样式（补全） ---------- */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;  /* 合并相邻边框，避免出现双边框 */
+  margin: var(--spacing-md) 0;
+  font-size: 0.95rem;
+  /* 防止表格在移动端溢出，但不破坏表格本身的 display 特性 */
+  display: table;
+  overflow-x: auto;
+}
+
+.post-content th,
+.post-content td {
+  border: 1px solid var(--color-border);  
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.post-content th {
+  background-color: var(--color-bg-secondary);
+  font-weight: 600;
+  white-space: nowrap;  /* 表头文字不换行，更整洁 */
+}
+
+/* 手机端优雅处理宽表格（横向滚动，不破坏布局） */
+@media (max-width: 768px) {
+  .post-content table {
+    display: block;      /* 块级化后允许滚动 */
+    overflow-x: auto;
+    white-space: nowrap; /* 防止单元格内容被挤碎，让它们横向滚动 */
+  }
+}

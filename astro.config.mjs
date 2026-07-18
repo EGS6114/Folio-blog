@@ -34,4 +34,6 @@ export default defineConfig({
 
   // 压缩输出 HTML
   compressHTML: true,
+
+  
 });
