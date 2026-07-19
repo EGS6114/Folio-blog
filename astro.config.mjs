@@ -2,22 +2,11 @@
 // 详细文档：https://docs.astro.build/zh-cn/reference/configuration-reference/
 
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
-import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
   // 网站地址，用于生成 sitemap 和 RSS
   site: 'https://folio.cc.cd',
-  adapter: cloudflare({
-    enableSessions: false,  // 禁用会话 KV
-  }),
-
-  // 集成插件
-  integrations: [
-    // 自动生成 sitemap.xml，有利于 SEO
-    sitemap(),
-  ],
 
   // Markdown 配置
   markdown: {

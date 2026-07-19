@@ -12,13 +12,11 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.0",
-    "@astrojs/sitemap": "^3.0.0",
     "astro": "^5.0.0",
     "markdown-it": "^14.3.0"
   },
   "devDependencies": {
     "@astrojs/cloudflare": "^12.6.13",
-    "typescript": "^5.3.0",
-    "wrangler": "^4.112.0"
+    "typescript": "^5.3.0"
   }
 }
