@@ -14,11 +14,17 @@ interface Props {
   title?: string;
   // 页面描述
   description?: string;
+  titleText?: string;
+  descText?: string;
 }
 
 // 接收参数，设置默认值
-const { title = "Folio-blog", description = "记录学习、生活与思考" } =
-  Astro.props;
+const {
+  title = "Folio-blog",
+  description = "记录学习、生活与思考",
+  titleText,
+  descText,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -48,7 +54,7 @@ const { title = "Folio-blog", description = "记录学习、生活与思考" } =
   </head>
   <body>
     <!-- 网站头部 -->
-    <Header />
+    <Header titleText={titleText} descText={descText} />
 
     <!-- 主内容区域，插槽放置页面内容 -->
     <main class="main-content">
