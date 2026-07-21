@@ -10,17 +10,19 @@ export default defineConfig({
 
   // Markdown 配置
   markdown: {
-    // 代码高亮配置，使用 Shiki（Astro 内置）
-    shikiConfig: {
-      // 代码高亮主题，可选主题：https://github.com/shikijs/shiki/blob/main/docs/themes.md
-      theme: 'github-dark',
-      // 启用自动换行
-      wrap: true,
-    },
+    syntaxHighlight: 'prism',
+    prismTheme: 'coy',
+    // 可选主题：'dracula', 'okaidia', 'tomorrow', 'coy' 等
   },
 
   // 构建配置
   build: {
+    vite: {
+      build: {
+        // 生成 sourcemap 会增加耗时，若不需要可关闭
+        sourcemap: false,
+      },
+    },
     // 内联小于 4KB 的样式，减少 HTTP 请求
     inlineStylesheets: 'auto',
   },

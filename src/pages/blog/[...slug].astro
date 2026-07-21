@@ -11,6 +11,9 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props as { post: CollectionEntry<"blog"> };
+
+// 在这里调用 render()
+const { Content } = await post.render();
 ---
 
 <BlogLayout
@@ -19,6 +22,9 @@ const { post } = Astro.props as { post: CollectionEntry<"blog"> };
   pubDate={post.data.pubDate}
   coverImage={post.data.coverImage}
 >
-  <!-- 安全访问 post.rendered.html -->
-  <div class="post-content" set:html={post.rendered?.html} />
+  <!-- 方式一：使用 Content 组件（推荐，自带样式隔离） -->
+  <Content />
+
+  <!-- 方式二：使用 rendered.html（适用于自定义容器） -->
+  <!-- <div class="post-content" set:html={rendered?.html} /> -->
 </BlogLayout>
