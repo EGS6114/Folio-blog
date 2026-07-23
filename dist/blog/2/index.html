@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><link rel="stylesheet" href="/path/to/your/prism-theme.css"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="计算机网络通信系统性的全面扫盲"><!-- 页面标题 --><title>计算机网络通信扫盲（基础版） - 我的博客</title><!-- RSS 订阅发现，让浏览器能自动发现 RSS --><link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="/rss.xml"><!-- 网站图标（可选，可自行替换） --><link rel="icon" type="image/png" href="https://pic-pan.egs.cc.cd/file/tgs_eyJ2IjoxLCJmIjoiQlFBQ0FnVUFBeUVHQUFUOHFwRExBQU1uYWxpcGVSWk5HS3VlVENuZDcyOENuX1J3LTdJQUFnVWRBQUx4aHNsVzE3eWVvTkNCT1o0OUJBIiwiZSI6InBuZyIsIm4iOiJmYXZpY29uLWRhcmstMTgwLnBuZyIsIm0iOiJpbWFnZS9wbmciLCJzIjoyMzgyLCJ0IjoxNzg0MTk1NDQ5Njg0LCJtaWQiOjM5fQ.eEZMLT9L6w-z_I_nk51CEufy_fBlYNqQMm_5pOt8NUc.png"><link rel="stylesheet" href="/_astro/_slug_.tCIEAqpH.css"></head> <body> <!-- 网站头部 --> <header class="site-header" data-astro-cid-3ef6ksr2> <div class="container" data-astro-cid-3ef6ksr2> <!-- 导航栏（无边框） --> <nav class="navbar" data-astro-cid-3ef6ksr2> <ul data-astro-cid-3ef6ksr2> <li data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2>首页</a> </li><li data-astro-cid-3ef6ksr2> <a href="/navigation" data-astro-cid-3ef6ksr2>导航</a> </li> </ul> </nav> <!-- 标题区域：上下各一条分割线 --> <div class="title-wrapper" data-astro-cid-3ef6ksr2> <h1 class="site-title" style="font-size: 2.2rem;" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2>Folio-blog</a> </h1> <p class="site-description" data-astro-cid-3ef6ksr2>记录学习、生活与思考</p> </div> </div> </header>  <!-- 主内容区域，插槽放置页面内容 --> <main class="main-content"> <div class="container">  <article> <!-- 文章头部：标题 + 日期，居中显示 --> <header class="post-header"> <h1 class="post-title">计算机网络通信扫盲（基础版）</h1> <time class="post-date" datetime="2026-07-18T00:00:00.000Z"> 2026年7月18日 </time> </header> <!-- 封面图片（如果有） -->  <!-- 文章正文内容，通过插槽传入 --> <div class="post-content">   <h2 id="一概述">一.概述</h2>
+<p>本文总结了随想君的几个文章并结合最新的数据，面向极广的人群，也就是说，即便完全不懂IT也能看懂(至少一部分);稍微懂行的人，看完后也会有帮助。</p>
+<h2 id="二为什么要懂网络">二.为什么要懂网络？</h2>
+<p>你每天上网刷视频、发消息、点外卖，但有没有想过——你的手机到底是怎么找到千里之外的服务器，把数据送过去、再把结果拿回来的？</p>
+<p>这背后就是计算机网络通信在做的事。</p>
+<p>简单说，计算机网络就是把多台计算机用通信设备和线路连起来，让它们能互相传数据、共享资源。而网络通信的本质，就是让不同设备之间能够可靠地传输数据。</p>
+<p>听起来简单，但真要做起来，问题可不少：设备型号不同、操作系统不同、数据可能在中途丢失、网络可能拥堵……为了解决这些麻烦，工程师们设计了一套精妙的体系。今天这篇文章，就带你从头到尾捋一遍。</p>
+<h2 id="三网络模型的骨架分层设计">三.网络模型的骨架：分层设计</h2>
+<p>网络通信这么复杂，怎么把它理清楚？答案是——分层。</p>
+<p>把整个通信过程拆成一层一层的，每一层只管自己的事，层与层之间通过标准接口沟通。这样做的好处很明显：某一层升级了（比如从IPv4换到IPv6），不影响其他层；出了问题也能快速定位是哪一层的事。</p>
+<p>目前最经典的两个模型是：
+· OSI七层模型：理论派，分了七层，教学和面试常考
+· TCP/IP四层模型：实战派，互联网真正在用的标准</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">OSI 七层模型</th><th align="left">TCP/IP 四层模型</th><th align="left">核心功能</th><th align="left">典型协议</th><th align="left">核心设备</th></tr></thead><tbody><tr><td align="left"><strong>应用层</strong></td><td align="left"><strong>应用层</strong></td><td align="left">为用户提供网络服务接口</td><td align="left">HTTP、HTTPS、DNS、FTP、SSH</td><td align="left">无（纯软件）</td></tr><tr><td align="left"><strong>表示层</strong></td><td align="left"><strong>应用层</strong></td><td align="left">数据加密/解密、压缩、格式转换</td><td align="left">SSL/TLS、JPEG、ASCII</td><td align="left">无（纯软件）</td></tr><tr><td align="left"><strong>会话层</strong></td><td align="left"><strong>应用层</strong></td><td align="left">建立、管理和终止会话连接</td><td align="left">NetBIOS、RPC</td><td align="left">无（纯软件）</td></tr><tr><td align="left"><strong>传输层</strong></td><td align="left"><strong>传输层</strong></td><td align="left">端到端的可靠或不可靠传输</td><td align="left">TCP、UDP</td><td align="left">无（操作系统内核）</td></tr><tr><td align="left"><strong>网络层</strong></td><td align="left"><strong>网络层</strong></td><td align="left">跨网络寻址、路由选择、数据包转发</td><td align="left">IP、ICMP、ARP（辅助）</td><td align="left"><strong>路由器</strong>、三层交换机</td></tr><tr><td align="left"><strong>数据链路层</strong></td><td align="left"><strong>网络接口层</strong></td><td align="left">相邻节点间的帧传输、差错控制</td><td align="left">以太网、Wi-Fi（802.11）</td><td align="left"><strong>交换机</strong>、网桥</td></tr><tr><td align="left"><strong>物理层</strong></td><td align="left"><strong>网络接口层</strong></td><td align="left">原始比特流的物理传输</td><td align="left">双绞线、光纤、无线频段</td><td align="left"><strong>集线器</strong>、中继器</td></tr></tbody></table>
+<p>接下来就简单展开说一下</p>
+<h3 id="物理层最底层负责搬运比特">物理层：最底层，负责”搬运比特”</h3>
+<p>物理层干的事最实在——把0和1变成电信号或光信号，通过网线、光纤、Wi-Fi发出去。</p>
+<h5 id="信道原理">信道原理</h5>
+<ol>
+<li>信道是信号传输的通道。它分两种：</li>
+</ol>
+<ul>
+<li>物理信道（有线/无线）：看得见的介质（网线、光纤）和看不见的频谱（Wi-Fi 2.4GHz/5GHz、4G/5G频段）。</li>
+<li>逻辑信道：在同一根物理线缆或频段上，通过技术划分出的“虚拟通道”。比如你用Wi-Fi同时看视频和聊微信，数据包就是在不同的逻辑信道上传输的。</li>
+</ul>
+<ol start="2">
+<li>关键瓶颈：带宽、速率与信噪比</li>
+</ol>
+<p>信道有物理限制，这里有个著名的香农定理公式：极限速率 = B * log₂(1 + S/N)（B是带宽，S/N是信噪比）。它告诉我们的残酷现实是：无论技术多好，信道的容量都有天花板。这也是为什么5G必须用高频段（带宽B更大），以及路由器要放在开阔处（降低噪声N）。</p>
+<ol start="3">
+<li>多路复用：一条路跑多辆车</li>
+</ol>
+<p>既然信道昂贵，就要充分利用。多路复用就是让多个信号共享同一物理信道的技术：</p>
+<p>· 频分复用（FDM）：分频率段，比如电视广播的不同频道。
+· 时分复用（TDM）：分时间段，轮流使用，传统电话网络的核心。
+· 波分复用（WDM）：光纤里用不同波长的光同时传数据。
+· 码分复用（CDM）：靠编码区分用户，军用和3G网络的基础。</p>
+<ol start="4">
+<li>无线信道的“隐形战争”</li>
+</ol>
+<p>Wi-Fi和蜂窝网络最怕同频干扰。你在路由器后台看到的“信道（Channel）设置（1-11）”，就是在选择频段里的细分车道。如果邻居都用“信道6”，就会堵车，手动改成“1”或“11”往往能大幅提升网速（这也是无线排障的实用技巧）。</p>
+<ol start="5">
+<li>数据链路层的“逻辑信道”</li>
+</ol>
+<p>在MAC子层，信道还分竞争型（大家一起抢，CSMA/CD协议，以太网在用）和受控型（轮询或令牌，老式令牌环网）。现代Wi-Fi还引入了OFDMA，能把一个信道再切分成更小的“资源块”分配给多台设备，这就是Wi-Fi 6速度快的底层原因。</p>
+<h3 id="数据链路层把比特打包成帧">数据链路层：把比特打包成”帧”</h3>
+<p>物理层只管发比特，但比特流怎么分组、怎么知道哪一段是一帧数据、怎么发现传输中的错误这些都是数据链路层的事。</p>
+<p>这一层的核心概念是MAC地址——每个网卡出厂时就烧录的48位全球唯一标识。交换机（Switch）就工作在数据链路层，它维护一张MAC地址表，知道每个设备接在哪个端口上，数据来了只发给目标设备，不像集线器那样无脑广播。</p>
+<h3 id="网络层负责找路">网络层：负责找路</h3>
+<p>数据链路层只能在一个局域网内通信。如果你想从家里连到百度服务器，中间要经过很多个网络——这就轮到网络层了。</p>
+<p>网络层的核心是IP地址和路由。IP地址标识设备在哪个网络，路由器（Router）则根据IP地址和路由表，决定数据该往哪个方向走。</p>
+<h3 id="传输层端到端的快递服务">传输层：端到端的”快递服务”</h3>
+<p>传输层干的是从你的电脑到对方服务器的端到端传输。这一层有两个明星协议：</p>
+<p>· TCP：可靠、面向连接。保证数据不丢、不乱序。HTTP、FTP、SSH都用它。
+· UDP：不可靠、无连接。不保证到达，但速度快。视频通话、DNS查询常用它。</p>
+<p>打个比方：TCP像寄挂号信，有回执、能追踪；UDP像扔漂流瓶，快但不保证送到。</p>
+<h2 id="四核心概念串讲">四.核心概念串讲</h2>
+<h5 id="1ip地址子网掩码网关">1.IP地址、子网掩码、网关</h5>
+<p>IP地址是设备在网络中的“门牌号”。目前主流是IPv4（32位，比如192.168.1.100），但地址快用完了，正在向IPv6（128位）过渡。</p>
+<p>子网掩码用来区分IP地址里哪部分是“网络号”、哪部分是“主机号”——说白了就是帮你判断：这个IP跟我在不在同一个局域网。</p>
+<p>默认网关是“出门的路由器”——所有要发到外网的数据，都得先交给它。</p>
+<h5 id="2mac地址-vs-ip地址">2.MAC地址 vs IP地址</h5>
+<p>IP地址是逻辑地址，可以改变（你换个Wi-Fi，IP就变了）。MAC地址是物理地址，出厂就固定了。</p>
+<p>打个比方：IP地址是“北京市朝阳区XX路XX号”，MAC地址是你的身份证号。快递员先用地址找到小区（IP路由），进了小区再用门牌号找到你家（MAC交换）。</p>
+<h5 id="3路由转发交换">3.路由、转发、交换</h5>
+<p>这三个词经常被混用，但其实不一样：</p>
+<p>· 路由：规划路径——数据该走哪条路（网络层，看IP地址）
+· 转发：执行路径——把数据包传给下一站（网络层）
+· 交换：端口间转发——在同一网络内把帧送到目标设备（数据链路层，看MAC地址）</p>
+<p>路由是“看地图选路”，交换是“在小区里送快递”。</p>
+<h2 id="五tcp的三次握手与四次挥手">五.TCP的三次握手与四次挥手</h2>
+<p>TCP要保证可靠传输，所以在发数据之前，必须先建立连接；发完之后，再断开连接。</p>
+<p>三次握手：建立连接</p>
+<p>就像打电话：</p>
+<ol>
+<li>第一次握手（客户端→服务器）：客户端发SYN包，说“我想跟你建立连接”</li>
+<li>第二次握手（服务器→客户端）：服务器回SYN+ACK，说“收到，我也想跟你连”</li>
+<li>第三次握手（客户端→服务器）：客户端回ACK，说“好，连上了”</li>
+</ol>
+<p>三次握手的本质是双向确认——不仅要确认“我能发给你”，还要确认“你能发给我，且我能收到你的回复”。</p>
+<p>四次挥手：断开连接</p>
+<p>断开比建立多一步，因为TCP是全双工的——双方都有独立的发送和接收通道，得各自关闭：</p>
+<ol>
+<li>第一次挥手（主动方→被动方）：发FIN，说“我发完了，要关了”</li>
+<li>第二次挥手（被动方→主动方）：回ACK，说“收到，你关吧”</li>
+<li>第三次挥手（被动方→主动方）：被动方发完自己的数据后，发FIN，说“我也发完了”</li>
+<li>第四次挥手（主动方→被动方）：回ACK，连接正式关闭</li>
+</ol>
+<p>断开后主动方还要等一会儿（TIME_WAIT），防止最后的ACK丢了需要重传。</p>
+<h2 id="六应用层协议你每天都在用">六.应用层协议：你每天都在用</h2>
+<p><strong>HTTP / HTTPS</strong></p>
+<p>HTTP是网页访问的基础协议，基于TCP，默认端口80。它的特点是无状态——服务器不记得你上次请求过什么。</p>
+<p>但HTTP是明文传输，不安全。于是有了HTTPS（默认端口443）——在HTTP外面套了一层SSL/TLS加密，用对称加密+非对称加密+数字证书三重保障。现在主流网站基本都上HTTPS了，浏览器地址栏会有个小锁图标。</p>
+<p><strong>DNS</strong>：互联网的“电话簿”</p>
+<p>你记不住142.250.31.103这样的IP地址，但你记得住www.google.com。<strong>DNS</strong>（域名系统） 就是负责把域名翻译成IP地址的。</p>
+<p>DNS解析过程是<strong>层级式</strong>的：</p>
+<p>浏览器→本地缓存→本地DNS服务器→根DNS服务器→顶级域DNS服务器（如.com）→权威DNS服务器→返回IP地址。</p>
+<p><strong>其他常见协议</strong></p>
+<ul>
+<li><strong>FTP</strong> ：文件传输，端口21</li>
+<li><strong>SSH</strong> ：远程安全登录</li>
+<li><strong>DHCP</strong> ：自动分配ip地址，让你连上wifi就能上网</li>
+</ul>
+<h2 id="七网络安全看不见的战场">七.网络安全：看不见的战场</h2>
+<p>网络上的威胁无处不在，安全机制主要围绕四个目标：</p>
+<ul>
+<li>机密性：只有通信双方能看懂数据 → 靠加密</li>
+<li>完整性：数据没被篡改 → 靠哈希/数字签名</li>
+<li>身份认证：确认对方是本人 → 靠证书/密码</li>
+<li>可用性：服务始终可用 → 靠防火墙/抗DDoS</li>
+</ul>
+<p>加密分两种：</p>
+<ul>
+<li><strong>对称加密</strong>：同一个密钥加解密（如AES），速度快</li>
+<li><strong>非对称加密</strong>：公钥加密、私钥解密（如RSA），速度慢但安全</li>
+</ul>
+<p>HTTPS就是两者结合：用非对称加密安全地交换对称密钥，之后用对称加密传输数据。</p>
+<p>常见的攻击方式包括窃听、重放攻击、IP欺骗、DDoS等，防御手段有加密、防火墙、入侵检测等。</p>
+<h2 id="八杂项">八.杂项</h2>
+<p>有些概念并不属于某个特定的章节，所以放到这里</p>
+<h5 id="vpnvirtual-private-network">VPN(<a href="https://en.wikipedia.org/wiki/Virtual_private_network">virtual private network</a>)</h5>
+<p>现在很多人使用vpn都是为了翻墙。其实vpn的本意(如其名称所示)是为了提供某种虚拟化的私有的网络，让身处异地的多个人，可以用 VPN 构建出一个虚拟的内网，从而能在这个内网中协同工作。
+VPN 的类型很多，使用的技术也各不相同，因此 VPN 对应的 OSI 层次很宽（“1层”到“6层”）。我到维基百科找了如下这张图，让你见识一下 VPN 的多样性。
+<img src="https://pic-pan.egs.cc.cd/file/tgs_eyJ2IjoxLCJmIjoiQlFBQ0FnVUFBeUVHQUFUOHFwRExBQU1wYWxya1hmbWZpWTVpVXNrN3RSWGVCbDhzeENvQUFzY2pBQUpJZjlGV2N6TlZtSWFPbTVnOUJBIiwiZSI6InBuZyIsIm4iOiJxWGJhQllaQnZaNWs2Z240bXAyTTBkQ1lGVzFyS19IUjNKVENSWW9XcEd5Tm85QVo2aTkwTGdRelpndkwwT3FJbXJmNmo1Rk5BYkRRREhHNWs5STRpSFZzbTdGQ1NTSFloQ1YweUtKc3o1dkFIOUZpbF80WnhjbE9vSFNqbFVIMmFMQThHdjNoTWNVLnBuZyIsIm0iOiJpbWFnZS9wbmciLCJzIjo0NTc4MywidCI6MTc4NDM0MTU5Nzg5NywibWlkIjo0MX0.rL0jtgjlvxK-iMQmW7tXuzKdfEhPkQ17psyrP6ByXkc.png" alt="vpn分类示意图"></p>
+<h5 id="代理proxy">代理(proxy)</h5>
+<p>经常翻墙的同学们，对“代理”应该非常熟悉了。“代理”与 VPN 类似，一开始并不是用来翻墙滴，“翻墙”只是这俩的副业。</p>
+<h6 id="代理服务器proxy-server">代理服务器（proxy server）</h6>
+<p>“代理服务器”部署在“客户端 ＆ 服务端”之间，起到某种“中介”的作用。“代理服务器”的类型有很多，干的事情各不相同。
+<img src="https://pic-pan.egs.cc.cd/file/tgs_eyJ2IjoxLCJmIjoiQlFBQ0FnVUFBeUVHQUFUOHFwRExBQU1yYWxybF9IdGNXREU2VXlFQlVMNXFSV2k5dzJFQUFzMGpBQUpJZjlGV1kzcjUyZVI2NDVVOUJBIiwiZSI6InBuZyIsIm4iOiJ3a2xLZjVnb1VWWFR6bWpjY21maklScEtLeFpkLTl2aFRfMEhNeTNLa25qQVU3T3hqMEdQZ0M3ampqTzBCQWZsNmYtZmFwYUJnSFNwMG10c0Uxc1M2Wnl5cEUtRVNCNGlkTWktUmVLS1UxN1oxa19vVkt1cGlPUWNYM3VRVGxmVV9QMFZqb2labkc0LnBuZyIsIm0iOiJpbWFnZS9wbmciLCJzIjoyNDY5MCwidCI6MTc4NDM0MjAxMjYzMiwibWlkIjo0M30.3_SckyXbQbglCtoJrG7Q5sRwOPeQA4t_3d1_xmFJZkk.png" alt="“代理服务器的简单示意图”"></p>
+<h5 id="代理客户端proxy-client">代理客户端（proxy client）</h5>
+<p>早期的代理服务器，<strong>不</strong>需要“代理客户端”。因为早期的“代理服务器”支持的是<strong>标准协议</strong>。比如“HTTP proxy server”支持的是标准 HTTP协议，而用户的电脑上，已经有浏览器（原生支持 HTTP 协议）。这种情况下，自然不需要再有“代理客户端”。</p>
+<p>后来，为了满足某些特殊需求（比如翻墙），“代理服务器”必须使用某种特殊的（非标准的）协议。因此，就必须在用户的环境中安装“代理客户端”。对于翻墙来说，你装的翻墙软件，相当于“代理客户端”。</p>
+<p>代理的层次
+“代理”也分不同的层次。比较常见的有如下几种：</p>
+<ul>
+<li>TCP 代理（TCP 端口转发）——4层（传输层）</li>
+<li>SOCKS 代理——5层（会话层）</li>
+<li>HTTP 代理——7层（应用层）</li>
+<li>…</li>
+</ul>
+<h2 id="九总结">九.总结</h2>
+<p>本篇博客很长，我写了挺久，你能看到这里也不容易，最后总结一下。</p>
+<p>网络通信的本质就十二个字：分层解耦、逐层封装、端到端协作。</p>
+<p>理解了这套分层协作的逻辑，网络对你来说就不再是“玄学”了。下次断网时，不妨从物理层开始，逐层往上排查——大部分问题，都逃不出这七层（或者说四层）的手掌心。</p>
+<p>PS：(修好了rss的小bug，优化了部分css，炸鸡块真好吃  ٩(๑′0`๑)۶ )</p>    </div> </article>  </div> </main> <!-- 网站页脚 --> <footer class="site-footer"> <div class="container"> <div class="footer-links"> <!-- RSS 订阅链接 --> <a href="/rss.xml" class="footer-link" title="RSS 订阅"> <!-- RSS 图标 SVG --> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"> <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1Z"></path> </svg> <span>RSS 订阅</span> </a> <!-- GitHub 链接，把 your-github 改成你的用户名 --> <a href="https://github.com/EGS6114" class="footer-link" title="GitHub" target="_blank" rel="noopener"> <!-- GitHub 图标 SVG --> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"> <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"></path> </svg> <span>Github</span> </a> <a href="https://qm.qq.com/q/bAzvF89Try" class="footer-link" title="QQ" target="_blank" rel="noopener"> <!-- GitHub 图标 SVG --> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>QQ</title><path d="M21.395 15.035a40 40 0 0 0-.803-2.264l-1.079-2.695c.001-.032.014-.562.014-.836C19.526 4.632 17.351 0 12 0S4.474 4.632 4.474 9.241c0 .274.013.804.014.836l-1.08 2.695a39 39 0 0 0-.802 2.264c-1.021 3.283-.69 4.643-.438 4.673.54.065 2.103-2.472 2.103-2.472 0 1.469.756 3.387 2.394 4.771-.612.188-1.363.479-1.845.835-.434.32-.379.646-.301.778.343.578 5.883.369 7.482.189 1.6.18 7.14.389 7.483-.189.078-.132.132-.458-.301-.778-.483-.356-1.233-.646-1.846-.836 1.637-1.384 2.393-3.302 2.393-4.771 0 0 1.563 2.537 2.103 2.472.251-.03.581-1.39-.438-4.673"></path></svg> <span>QQ</span> </a> </div> <p>&copy; 2026 EGS6114的博客. 保留所有权利.</p> </div> </footer> </body></html>
