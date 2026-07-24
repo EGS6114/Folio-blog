@@ -74,7 +74,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-color: #f0f2f5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -147,7 +147,6 @@ a:hover {
 
 .post-card {
   padding: var(--spacing-xs) 0;
-  border-bottom: 1px solid var(--color-border);
 }
 
 .post-card:last-child {
@@ -285,7 +284,7 @@ a:hover {
 /* ---------- 页脚样式 ---------- */
 .site-footer {
   padding: var(--spacing-lg) 0;
-  border-top: 1px solid var(--color-border);
+  /* border-top: 1px solid var(--color-border); */
   text-align: center;
   color: var(--color-text-secondary);
   font-size: 0.9rem;

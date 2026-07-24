@@ -56,3 +56,46 @@ const formattedDate = pubDate.toLocaleDateString("zh-CN", {
   <!-- 文章摘要/大概内容 -->
   <p class="post-card-description">{description}</p>
 </article>
+
+<style>
+  .post-card {
+    background: var(--card-bg, #fff);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem 2rem;
+    transition:
+      box-shadow 0.2s,
+      transform 0.1s;
+    margin-bottom: 1.5rem; /* 卡片之间的间距 */
+    border: 1px solid var(--card-border, #eaeaea);
+  }
+
+  .post-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .post-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .post-title {
+    font-size: 1.5rem;
+    margin: 0 0 0.25rem 0;
+    color: var(--text-primary, #1a1a1a);
+  }
+
+  .post-date {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #666);
+  }
+
+  .post-description {
+    margin-top: 0.5rem;
+    color: var(--text-secondary, #555);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>
